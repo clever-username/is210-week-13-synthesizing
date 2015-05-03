@@ -54,7 +54,7 @@ class PickleCache(object):
             1
         """
         return len(self.__data)
-        
+
     def __getitem__(self, key):
         """This function gets values from __data.
 
@@ -96,7 +96,7 @@ class PickleCache(object):
         if os.path.exists(self.__file_path) and \
         os.path.getsize(self.__file_path) > 0:
             myfile = open(self.__file_path, 'r')
-            __self.data = pickle.load(myfile)
+            self.__data = pickle.load(myfile)
             myfile.close()
 
     def flush(self):
